@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\payments\mpesa\MpesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Route::post('get-token',[MpesaController::class, 'getAccessToken']);
+Route::controller(MpesaController::class)
+->prefix('payments')
+->as('payments')
+->group(function(){
+    Route::get('/token','getAccesstoken')->name('token');   
 });
