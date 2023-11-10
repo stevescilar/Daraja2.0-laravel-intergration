@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/get-token',[MpesaController::class, 'getAccessToken']);
+Route::post('get-token',[MpesaController::class, 'getAccessToken']);
 
 // Route::controller(MpesaController::class)
 // ->prefix('payments')

@@ -35,7 +35,7 @@ class MpesaController extends Controller
         // );
         // $response = curl_exec($curl);
         // curl_close($curl);
-
+        //dd($response);
         return $response;
 
         //worked with gazzle
